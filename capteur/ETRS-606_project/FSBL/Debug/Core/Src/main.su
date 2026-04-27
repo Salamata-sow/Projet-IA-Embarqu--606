@@ -1,0 +1,11 @@
+../../Drivers/STM32N6xx_HAL_Driver/Inc/stm32n6xx_ll_bus.h:1407:22:LL_AHB4_GRP1_EnableClock	24	static
+../Core/Src/main.c:55:7:hts221_from_lsb_to_celsius_custom	32	static
+../Core/Src/main.c:71:7:hts221_from_lsb_to_humidity_custom	40	static
+../Core/Src/main.c:94:5:main	56	static
+../Core/Src/main.c:247:6:SystemClock_Config	224	static
+../Core/Src/main.c:342:13:MX_I2C1_Init	8	static
+../Core/Src/main.c:373:13:MX_GPIO_Init	32	static
+../Core/Src/main.c:391:9:platform_read	48	static
+../Core/Src/main.c:409:9:platform_write	48	static
+../Core/Src/main.c:429:6:BSP_PB_Callback	16	static
+../Core/Src/main.c:437:6:Error_Handler	8	static,ignoring_inline_asm
