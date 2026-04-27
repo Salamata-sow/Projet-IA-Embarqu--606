@@ -1,0 +1,12 @@
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:57:6:MX_NetXDuo_Init	64	static
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:145:13:ip_address_change_notify_callback	16	static
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:161:13:App_Ping_8_8_8_8	40	static
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:192:13:App_DNS_Client_Init	24	static
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:218:13:App_DNS_Resolve_And_Ping_Google	48	static
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:272:13:App_DNS_Resolve_ThingSpeak	32	static
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:303:13:App_Print_HTTP_Response	544	static
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:348:13:App_Send_Data_To_ThingSpeak	336	static
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:463:13:App_Check_TalkBack	840	static
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:619:13:nx_app_thread_entry	32	static
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:661:13:App_TCP_Thread_Entry	16	static
+C:/Users/PC/Downloads/Nx_TCP_Echo_Client/FSBL/NetXDuo/App/app_netxduo.c:675:13:App_Link_Thread_Entry	40	static

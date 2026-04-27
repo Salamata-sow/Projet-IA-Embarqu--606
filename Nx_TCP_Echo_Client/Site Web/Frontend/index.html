@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Station Météo - ThingSpeak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .sensor-card {
+            transition: all 0.3s ease;
+        }
+        .sensor-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-600 via-blue-800 to-slate-900 min-h-screen text-white flex flex-col items-center justify-center p-4">
+
+    <div class="w-full max-w-2xl">
+        <!-- En-tête -->
+        <div class="text-center mb-8">
+            <h1 id="location-name" class="text-4xl font-bold tracking-wide">Station Météo</h1>
+            <p id="status-display" class="text-blue-200 text-sm mt-2">Connexion en cours...</p>
+            <p id="last-update" class="text-blue-300 text-xs mt-1">Mise à jour: --:--</p>
+        </div>
+
+        <!-- Affichage Principal Température -->
+        <div class="flex flex-col items-center justify-center mb-10">
+            <div class="relative mb-6">
+                <i id="weather-icon" class="ph ph-cloud-sun text-9xl text-yellow-300 drop-shadow-lg animate-pulse"></i>
+            </div>
+            
+            <div class="flex items-start justify-center">
+                <span id="temp-val" class="text-8xl font-bold tracking-tighter">--</span>
+                <span class="text-4xl font-light mt-4 ml-2">°C</span>
+            </div>
+            
+            <p id="weather-desc" class="text-2xl font-light mt-4 capitalize text-blue-100">Chargement...</p>
+        </div>
+
+        <!-- Panneau des détails des capteurs STM32 -->
+        <div class="glass-panel rounded-3xl p-8 shadow-2xl">
+            <h3 class="text-sm uppercase tracking-widest text-blue-200 mb-6 font-semibold flex items-center gap-2">
+                <i class="ph ph-microchip text-lg"></i>
+                Données des Capteurs STM32
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Humidité -->
+                <div class="sensor-card glass-panel rounded-2xl p-4 flex flex-col items-center">
+                    <i class="ph ph-drop text-4xl text-blue-300 mb-3"></i>
+                    <p class="text-xs text-blue-200 uppercase tracking-wide font-semibold">Humidité</p>
+                    <p id="hum-val" class="text-3xl font-bold mt-2">-- %</p>
+                    <p class="text-xs text-blue-300 mt-1">DHT22/SHT41</p>
+                </div>
+
+                <!-- Pression -->
+                <div class="sensor-card glass-panel rounded-2xl p-4 flex flex-col items-center">
+                    <i class="ph ph-wind text-4xl text-slate-300 mb-3"></i>
+                    <p class="text-xs text-blue-200 uppercase tracking-wide font-semibold">Pression</p>
+                    <p id="pressure-val" class="text-3xl font-bold mt-2">-- hPa</p>
+                    <p class="text-xs text-blue-300 mt-1">LPS22HH</p>
+                </div>
+
+                <!-- Statut -->
+                <div class="sensor-card glass-panel rounded-2xl p-4 flex flex-col items-center">
+                    <i class="ph ph-signal text-4xl text-green-300 mb-3"></i>
+                    <p class="text-xs text-blue-200 uppercase tracking-wide font-semibold">Connexion</p>
+                    <p id="signal-val" class="text-3xl font-bold mt-2 text-green-400">●</p>
+                    <p class="text-xs text-green-300 mt-1">En ligne</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Statut ThingSpeak -->
+        <div class="text-center mt-6">
+            <p class="text-xs text-blue-300 flex items-center justify-center gap-2">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+                <span id="channel-info">Synchronisé avec ThingSpeak</span>
+            </p>
+            <p class="text-xs text-blue-400 mt-2">Channel ID: 3355322 | Auto-refresh: 15 secondes</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
